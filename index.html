@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="MBTI처럼 질문에 답하면 Don't Starve Together 캐릭터를 추천해주는 정적 웹 앱"
+    />
+    <meta name="theme-color" content="#17130f" />
+    <title>Don't Starve Together Character Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="ambientCanvas" aria-hidden="true"></canvas>
+
+    <main class="shell">
+      <section class="intro" aria-labelledby="siteTitle">
+        <div>
+          <h1 id="siteTitle">Don't Starve Together Character Finder</h1>
+          <p class="intro-copy">
+            12개 상황 질문으로 지금 플레이 성향에 맞는 생존자를 추천합니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="app-grid" aria-label="캐릭터 추천 질문지">
+        <aside class="status-panel">
+          <div class="meter-row">
+            <span id="stepLabel">질문 1 / 12</span>
+            <div class="meter-actions">
+              <span id="answeredLabel">0%</span>
+              <button id="restartButton" class="icon-button" type="button" title="처음부터 다시">
+                ↻
+              </button>
+            </div>
+          </div>
+          <div class="progress" aria-hidden="true">
+            <span id="progressBar"></span>
+          </div>
+        </aside>
+
+        <section class="quiz-panel" aria-live="polite">
+          <h2 id="questionTitle"></h2>
+          <p id="questionPrompt"></p>
+          <div id="answerList" class="answer-list"></div>
+          <div class="quiz-actions">
+            <button id="backButton" type="button" class="secondary">이전</button>
+          </div>
+        </section>
+
+        <section id="resultPanel" class="result-panel" aria-live="polite" hidden>
+          <div class="result-heading">
+            <span class="label">추천 결과</span>
+            <h2 id="resultName">아직 질문을 진행 중입니다</h2>
+            <p id="resultSummary">답변이 쌓이면 이곳에 가장 잘 맞는 캐릭터가 표시됩니다.</p>
+          </div>
+          <div id="resultDetails" class="result-details"></div>
+          <div id="matchList" class="match-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        팬 프로젝트입니다. Don't Starve Together와 캐릭터명은 Klei Entertainment의
+        자산입니다. 참고 자료:
+        <a href="https://www.klei.com/games/dont-starve-together">Klei</a>,
+        <a href="https://dontstarve.wiki.gg/wiki/Characters">Don't Starve Wiki</a>,
+        <a href="https://dontstarve.fandom.com/wiki/Wonkey">Wonkey 문서</a>.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
